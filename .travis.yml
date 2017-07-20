@@ -13,10 +13,7 @@ env:
   global:
   - ABI=armeabi-v7
   - TAG=google_apis
-  - secure: DENCjlvzW54U9QH7mWO3LJVLYEiX0Mj9U44QoGQcienflSDlVN1UhAiT7xnCKwWT38B37CzeQlHc541z78vAj+YPzPbebowFW0aiq/LNdFMigsT1j3gLpqrICjylG08i1Ho95FLCOaJSQWZJ5nSd3OceWLLxCYUXtS9E3BuMHGg=
-  - secure: HBdvSvplPEJWEu7aij7cA+ZiQt2qmb9+Q8WsUGOJJ1uYIOt/MVHSo0bYYLfk90eFlnJecN+oBi92LCM9PUT3mKIHm9apRsK9os+W/6wIezD+rKVYPfOLZ4uINaFRDjXUJqKB46fzVR54vc4N2QO0+spn7Sv7sXaytYEPwrO6tmo=
-  - secure: LwmoZ2AlZHGToVAko19F4Gthw45MBr0LOx9Y9a0AyiAzXr4g6HRx3fB0EsWBC2wL9Yk0cOqd3sahH79SnmomdPgeRANgvpF7udtK3MG84j2H1AmuEwqhWKm8mwYBi+jP0Ayx6PybhApaLlQJ191IUkHTlVB0G80oX1W/ypU2qE0=
-  - secure: fEnmnjnqqg6Rgmg9zvc23RzqgPGAYsadbkQDH1SDJ3KQEqC8sCglcYxGWqRkoVPO1oiA6b8uvYt9/bsWX6PIzL67nwPaNroHL7XarSrPwpPsldOpUHfrRX4negLSg5Y0nKJbtnjf7dfVg4nENs5zHrxNtok47iHcbsecuq9ueTM=
+  
   matrix:
     - API=16
     - API=19
@@ -43,7 +40,7 @@ cache:
     - $HOME/.gradle/wrapper
 before_install:
     - export EMULATOR="system-images;android-${API};${TAG};${ABI}" # Used to install/create emulator
-    - PATH=/usr/local/android-sdk/tools/bin:$PATH
+
 before_script:
     # Avoid useless reupload of cache after every build, see https://docs.travis-ci.com/user/languages/android
     - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
